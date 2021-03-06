@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import connect from 'react-redux'
 
 class RestaurantInput extends Component {
   
@@ -7,11 +8,18 @@ class RestaurantInput extends Component {
     this.state = {
       text: ''
     }
+  }
 
+  handleOnSubmit = (event) => {
+    event.preventDefault()
+    this.props.addRestaurant(this.state.text)
+    this.setState({
+      text: ''
+    })
   }
   
   handleOnChange(event){
-    this.setState = ({
+    this.setState({
       text: event.target.value
     })
   }
@@ -20,14 +28,14 @@ class RestaurantInput extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleOnSubmit}>
           <input 
             type="text"
-            onChange={(event) => this.handleOnChange(event)}
-            value={this.state.text}/>
+            value = {this.state.text}
+            onChange={(event) => this.handleOnChange(event)} />
           <input type="submit" />
         </form>
-        {this.state.text}
+        
       </div>
     );
   }
