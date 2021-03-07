@@ -6,10 +6,9 @@ class Review extends Component {
     this.props.deleteReview(this.props.review.id)
   }
   render() {
-    //const { review } = this.props;
    
 
-    debugger
+    //debugger
     return (
       <div>
         <li key={this.props.review.id}>

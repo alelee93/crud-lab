@@ -3,13 +3,18 @@ import Review from './Review';
 
 class Reviews extends Component {
   render() {
+
+    const restReviews = this.props.reviews.filter(review => review.restaurantId == this.props.restaurantId)
+
+
     debugger
     return (
       <ul>
 
-        {this.props.reviews ? this.props.reviews.map(review => {
+        {restReviews ? restReviews.map(review => {
           return(
-          (review.restaurantId == this.props.restaurantId) ? <Review review={review} deleteReview={this.props.deleteReview}/> : ''
+          (review.restaurantId == this.props.restaurantId) ? 
+          <Review review={review} deleteReview={this.props.deleteReview}/> : ''
           
         
         )}): ''}

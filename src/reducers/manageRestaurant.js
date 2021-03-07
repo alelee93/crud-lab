@@ -16,6 +16,7 @@ export default function manageRestaurants(state = {
         
 
         case 'ADD_REVIEW':
+            debugger
             const review = {
                 id: cuid(),
                 text: action.review,
