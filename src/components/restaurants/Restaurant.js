@@ -8,7 +8,7 @@ class Restaurant extends Component {
   }
 
   render() {
-    debugger
+   // debugger
     //const { restaurant } = this.props.restaurant;
     return (
       <div>

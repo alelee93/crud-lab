@@ -7,7 +7,13 @@ class Reviews extends Component {
     return (
       <ul>
 
-        {this.props.reviews.length > 0 ? this.props.reviews.map(review => <Review review={review} deleteReview={this.props.deleteReview}/>) : ''}
+        {this.props.reviews ? this.props.reviews.map(review => {
+          return(
+          (review.restaurantId == this.props.restaurantId) ? <Review review={review} deleteReview={this.props.deleteReview}/> : ''
+          
+        
+        )}): ''}
+  
       </ul>
     );
   }

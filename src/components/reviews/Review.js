@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 
 class Review extends Component {
 
+   handleOnClick = () => {
+    this.props.deleteReview(this.props.review.id)
+  }
   render() {
     //const { review } = this.props;
-    const handleOnClick = () => {
-      this.props.deleteReview(this.props.review.id)
-    }
+   
 
+    debugger
     return (
       <div>
         <li key={this.props.review.id}>
